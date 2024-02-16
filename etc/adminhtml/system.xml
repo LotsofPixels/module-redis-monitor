@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module/Config/etc/system_file.xsd">
+    <system>
+        <tab id="lotsofpixels" translate="label" sortOrder="1000" class="lotsofpixels-icon">
+            <label>Lots of Pixels</label>
+        </tab>
+        <section id="lotsofpixels_redis" translate="label" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Redis Monitor</label>
+            <tab>lotsofpixels</tab>
+            <resource>Lotsofpixels_Core::config</resource>
+            <group id="redismonitor" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
+                <frontend_model>Lotsofpixels\RedisMonitor\Block\Adminhtml\System\Config\Fieldset\General</frontend_model>
+            </group>
+        </section>
+    </system>
+</config>

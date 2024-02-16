@@ -1,0 +1,11 @@
+<h1> Redis Monitor</h1>
+<?php
+// redisusage=$(redis-cli info memory | grep 'used_memory:' | sed -r 's/used_memory://')
+$getRedismemory = shell_exec('redis-cli info memory | grep "used_memory:" | sed -r "s/used_memory://"');
+$getTotalmemory = shell_exec('redis-cli info memory | grep "total_system_memory:" | sed -r "s/total_system_memory://"');
+echo 'Used Redis Memory port 6278: ' . $getRedismemory . '<br>';
+echo 'Used Redis Memory port 6279: ' . $getTotalmemory . '<br>';
+echo 'Percentage: '. $percent = $getRedismemory / $getTotalmemory * 100;
+
+echo '</p>';
+echo shell_exec('redis-cli info memory');
